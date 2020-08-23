@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Box</title>
+    <style>
+      .board {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 10px;
+      }
+
+      .red-box {
+        background: red;
+        width: 200px;
+        height: 200px;
+        flex-grow: 1;
+        flex-basis: 1;
+      }
+
+      .blue-box {
+        flex-grow: 1;
+        flex-basis: 1;
+        flex-flow: 1;
+        background: blue;
+        width: 200px;
+        height: 100px;
+      }
+
+      .green-box {
+        flex-basis: 1;
+        background: green;
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="board">
+      <div class="red-box"></div>
+      <div class="blue-box"></div>
+      <div class="green-box"></div>
+      <div class="red-box"></div>
+      <div class="blue-box"></div>
+      <div class="green-box"></div>
+      <div class="red-box"></div>
+      <div class="blue-box"></div>
+      <div class="green-box"></div>
+      <div class="red-box"></div>
+      <div class="blue-box"></div>
+      <div class="green-box"></div>
+    </div>
+  </body>
+</html>
