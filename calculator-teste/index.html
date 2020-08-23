@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora</title>
+    <style>
+      .laber {
+        display: flex;
+        gap: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Calculadora</h1>
+    <div class="laber">
+      <div id="primeiroNumero">0</div>
+      <div id="operacao">+</div>
+      <div id="segundoNumero">0</div>
+      =
+      <div id="resultadoLabel">0</div>
+    </div>
+    <button onclick="atribuirValor(1)">1</button>
+    <button onclick="atribuirValor(2)">2</button>
+    <button onclick="atribuirValor(3)">3</button>
+    <button onclick="atribuirValor(4)">4</button>
+    <button onclick="atribuirValor(5)">5</button>
+    <button onclick="atribuirValor(6)">6</button>
+    <button onclick="atribuirValor(7)">7</button>
+    <button onclick="atribuirValor(8)">8</button>
+    <button onclick="atribuirValor(9)">9</button>
+    <button onclick="atribuirValor(0)">0</button>
+    <button onclick="resultado()">Resultado</button>
+
+    <script>
+      let primeiro = true;
+      function atribuirValor(numero) {
+        if (primeiro) {
+          alteracao = document.getElementById("primeiroNumero");
+          primeiro = false;
+        } else {
+          alteracao = document.getElementById("segundoNumero");
+        }
+        alteracao.innerHTML = numero;
+      }
+
+      function resultado() {
+        primeiro = document.getElementById("primeiroNumero");
+        segundo = document.getElementById("segundoNumero");
+        resultadoResp = document.getElementById("resultadoLabel");
+        resultadoResp.innerHTML =
+          parseInt(primeiro.innerHTML) + parseInt(segundo.innerHTML);
+        primeiro = true;
+      }
+    </script>
+  </body>
+</html>
