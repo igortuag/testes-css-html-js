@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      p {
+        color: red;
+        position: relative;
+      }
+
+      p::before {
+        content: "Polyane";
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        color: black;
+        overflow: hidden;
+        width: 0%;
+
+        background: green;
+
+        transition: all 2s;
+      }
+
+      p:hover::before{
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Polyane</p>
+  </body>
+</html>
