@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background: rgb(211, 211, 211);
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="printData()">PRINT</button>
+
+    <script>
+      const { ipcRenderer } = require("electron");
+      const data = [
+        {
+          type: "text",
+          value: "UpMarket Gestor de Pedidos",
+          style: "font-size: 16px; color: #000",
+        },
+      ];
+      function printData() {
+        ipcRenderer.send("print", JSON.stringify(data));
+      }
+    </script>
+  </body>
+</html>
