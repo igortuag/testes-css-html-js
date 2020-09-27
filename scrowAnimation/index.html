@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://unpkg.com/scrollreveal@4"></script>
+
+    <style>
+      .layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .headline {
+        width: 400px;
+        height: 400px;
+        background: chartreuse;
+      }
+
+      .blue {
+        background: blue;
+        width: 500px;
+      }
+
+      .red {
+        background: red;
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="teste1" onclick="Pagina1()">TESTE 1</button>
+    <button id="teste2" onclick="Pagina2()">TESTE 2</button>
+
+    <div class="layout" id="doidoTeste">
+      <div class="headline">Widget, Inc.</div>
+
+      <div class="headline">Widget, Inc.</div>
+
+      <div class="headline">Widget, Inc.</div>
+
+      <div class="headline">Widget, Inc.</div>
+
+      <div class="headline">Widget, Inc.</div>
+
+      <div class="headline">Widget, Inc.</div>
+
+      <div class="headline">Widget, Inc.</div>
+
+      <div class="headline">Widget, Inc.</div>
+
+      <div class="headline">Widget, Inc.</div>
+
+      <div class="headline">Widget, Inc.</div>
+
+      <div class="headline">Widget, Inc.</div>
+
+      <div class="headline">Widget, Inc.</div>
+
+      <div class="headline">Widget, Inc.</div>
+
+      <div class="headline">Widget, Inc.</div>
+
+      <div class="headline">Widget, Inc.</div>
+
+      <div class="headline">Widget, Inc.</div>
+
+      <div class="headline">Widget, Inc.</div>
+
+      <div class="headline">Widget, Inc.</div>
+
+      <div class="headline">Widget, Inc.</div>
+
+      <div class="headline">Widget, Inc.</div>
+    </div>
+
+    <script>
+      ScrollReveal().reveal(".headline");
+
+      btn1 = document.getElementById("teste1");
+      btn2 = document.getElementById("teste2");
+
+      function Pagina1() {
+        const pagina = document.getElementById("doidoTeste");
+        pagina.innerHTML = `
+        <div class="headline blue">
+		      Card da pagina teste 1, você clicou no botão 1
+        </div>
+
+        <div class="headline blue">
+		      Card da pagina teste 1, você clicou no botão 1
+        </div>
+
+        <div class="headline blue">
+		      Card da pagina teste 1, você clicou no botão 1
+        </div>
+
+        <div class="headline blue">
+		      Card da pagina teste 1, você clicou no botão 1
+        </div>
+
+        <div class="headline blue">
+		      Card da pagina teste 1, você clicou no botão 1
+        </div>
+
+        <div class="headline blue">
+		      Card da pagina teste 1, você clicou no botão 1
+        </div>
+        `;
+        ScrollReveal().reveal(".headline");
+      }
+
+      function Pagina2() {
+        const pagina = document.getElementById("doidoTeste");
+        pagina.innerHTML = `
+        <div class="headline red">
+		      Você clicou na pagina teste 2, esses são os cards vermelhos
+        </div>
+
+        <div class="headline red">
+		      Você clicou na pagina teste 2, esses são os cards vermelhos
+        </div>
+
+        <div class="headline red">
+		      Você clicou na pagina teste 2, esses são os cards vermelhos
+        </div>
+
+        <div class="headline red">
+		      Você clicou na pagina teste 2, esses são os cards vermelhos
+        </div>
+
+        <div class="headline red">
+		      Você clicou na pagina teste 2, esses são os cards vermelhos
+        </div>
+
+        <div class="headline red">
+		      Você clicou na pagina teste 2, esses são os cards vermelhos
+        </div>
+        `;
+        ScrollReveal().reveal(".headline");
+      }
+    </script>
+  </body>
+</html>

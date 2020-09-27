@@ -3,7 +3,7 @@ function carregarBotoes() {
   const raiz = document.getElementById("root");
 
   raiz.innerHTML =
-    "<button onclick='aparecerQuadrado()'>aparecer quadrado vermelho</button>   <button>ajuda 2</button>   <button>about-us 3</button>";
+    "<button onclick='aparecerQuadrado()'>aparecer quadrado vermelho</button>   <button>ajuda 2</button>   <button>about-us 3</button> ";
 }
 
 function aparecerQuadrado() {
