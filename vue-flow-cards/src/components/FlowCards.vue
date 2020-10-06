@@ -3,7 +3,7 @@
     <h1>Flow Cards Testing</h1>
 
     <div class="board">
-      <RedCard :position="initialPosition" :cardsChild="cards" />
+      <RedCard :position="initialPosition" :cardsChild="cardsWithInfo" :columCard="1"/>
     </div>
   </div>
 </template>
@@ -23,6 +23,12 @@ export default {
         {
           id: 1,
           name: "Teste 1",
+          cards: [
+            {
+              id: 5,
+              name: "Teste 5",
+            },
+          ],
         },
         {
           id: 2,
@@ -39,6 +45,21 @@ export default {
       ],
     };
   },
+  methods: {
+    getPosition(card) {
+      if (!card.cards) {
+        card.x = 30;
+        card.y = 50;
+        return card;
+      }
+      card.cards.map((el) => this.getPosition(el));
+    },
+  },
+  computed: {
+    cardsWithInfo() {
+      return this.cards.map((el) => this.getPosition(el));
+    },
+  },
   components: {
     RedCard,
   },
@@ -47,10 +68,12 @@ export default {
 
 <style lang="scss" scoped>
 .board {
+
   background: #577284;
-  display: block;
   width: 90vw;
   height: 80vh;
   position: relative;
+
+  overflow: scroll;
 }
 </style>
