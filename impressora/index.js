@@ -20,6 +20,7 @@ ipcMain.on("print", (event, arg) => {
   // printer
   PosPrinter.print(data, {
     printerName: "POS-58(copy of 1)",
+    preview: true,
     silent: true,
   }).catch((err) => console.log(err));
 });
