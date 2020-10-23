@@ -27,3 +27,6 @@ console.log('Vaaaai ali por favor.'.replace(/a{4}/g, 'a'))
 
 
 console.log('Vaiiiiiiiiiiiiiiiiii'.replace(/i+/g, 'i'))
+
+console.log(`igortuag@gmail.com
+contato@gmail.com`.replace(/^\w+/g, 'X'))
