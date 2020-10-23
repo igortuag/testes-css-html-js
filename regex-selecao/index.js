@@ -20,3 +20,10 @@ console.log('JavaScript é a linguagem.'.replace(/[a-zà-ú]/gi, '0'))
 console.log('JavaScript é a linguagem.'.replace(/[a-zà-ú]/gi, '0'))
 
 console.log('JavaScript é a linguagem.'.replace(/./gi, '0'))
+
+console.log('Guarda-chuva R$ 23,00.'.replace(/\W/g, '-'))
+
+console.log('Vaaaai ali por favor.'.replace(/a{4}/g, 'a'))
+
+
+console.log('Vaiiiiiiiiiiiiiiiiii'.replace(/i+/g, 'i'))
