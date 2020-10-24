@@ -22,12 +22,66 @@
 // }
 // console.log(i);
 
-const frase = `JavaScript, TypeScript e CoffeScript, Java`;
+// const frase = `JavaScript, TypeScript e CoffeScript, Java`;
 
-const regexp = /\w+/g;
+// const regexp = /\w+/g;
 
-let regexpResult;
+// let regexpResult;
 
-while ((regexpResult = regexp.exec(frase)) !== null) {
-  console.log(regexpResult[0]);
-}
+// while ((regexpResult = regexp.exec(frase)) !== null) {
+//   console.log(regexpResult[0]);
+// }
+
+// const frase = `JavaScript, TypeScript e CoffeScript, Java`;
+
+// const regexp = /[a-z]/gi;
+
+// const result = frase.split(regexp)
+
+// console.log(result)
+
+// const tags = `
+// <ul>
+//   <li>Item 1</li>
+//   <li>Item 2</li>
+// </ul>
+// `;
+
+// const regexp = /<li/g;
+
+// const result = tags.replace(regexp, '$& class="ativo"')
+
+// console.log(result)
+
+// const emails = `
+// empresa@email.com
+// contato@email.com
+// suporte@email.com
+// `
+
+// const regexp = /(\w+@)[\w.]+/g;
+
+// console.log(emails.replace(regexp, '$1gmail.com'))
+
+const emails = `
+joao@homail.com.br
+marta@ggmail.com
+bruna@oulook.com.br
+igortuag@gmail.com
+`;
+
+const regexp = /(\w+@)([\w.]+)/g;
+
+console.log(
+  emails.replace(regexp, (...args) => {
+    if(args[2] === 'homail.com.br') {
+      return args[1] + 'hotmail.com.br';
+    } else if (args[2] === 'ggmail.com') {
+      return args[1] + 'gmail.com';
+    } else if (args[2] === 'oulook.com.br') {
+      return args[1] + 'outlook.com.br';
+    } else {
+      return args[0]
+    }
+  }),
+);
