@@ -14,13 +14,18 @@ export default class ValidarCpf {
   }
   validar(cpf) {
     const matchCpf = cpf.match(/(?:\d{3}[-.\s]?){3}\d{2}/g);
-    return (!!matchCpf && matchCpf[0] === cpf)
+    return !!matchCpf && matchCpf[0] === cpf;
   }
   validarNaMudanca(cpfElement) {
-    if(this.validar(cpfElement.value)){
-      cpfElement.value = this.formatar(cpfElement.value)
+    if (this.validar(cpfElement.value)) {
+      cpfElement.classList.remove("erro");
+      cpfElement.classList.add("valido");
+      cpfElement.value = this.formatar(cpfElement.value);
+      cpfElement.nextElementSibling.classList.remove("ativo")
     } else {
-
+      cpfElement.classList.remove("valido");
+      cpfElement.classList.add("erro");
+      cpfElement.nextElementSibling.classList.add("ativo")
     }
   }
   adicionarEvent() {
@@ -28,8 +33,15 @@ export default class ValidarCpf {
       this.validarNaMudanca(this.element);
     });
   }
+  adicionarErroSpan() {
+    const erroElement = document.createElement("span");
+    erroElement.classList.add("erro-text");
+    erroElement.innerText = "CPF Invalido";
+    this.element.parentElement.insertBefore(erroElement, this.element.nextElementSibling);
+  }
   iniciar() {
     this.adicionarEvent();
+    this.adicionarErroSpan();
     return this;
   }
 }
